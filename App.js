@@ -16,10 +16,10 @@ import {
   StatusBar,
 } from 'react-native';
 
-import SignInScreen from './app/screens/signin/signin';
+import Bio from './app/screens/bio/bio';
 
 const App: () => React$Node = () => {
-  return <SignInScreen />
+  return <Bio />
 };
 
 export default App;

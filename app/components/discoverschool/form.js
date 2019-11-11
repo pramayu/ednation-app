@@ -10,7 +10,7 @@ var {height, width} = Dimensions.get('window');
 
 
 class Form extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       slideactive: false
@@ -69,21 +69,24 @@ class Form extends Component {
     return (
       <Animated.View style={{transform: [{translateY: this.state.slideactive === false ? slideupSty : slidedwSty}], width: '100%', paddingHorizontal: 20, marginTop: 50, backgroundColor: '#ffffff'}}>
         <View style={{flexDirection: 'row', borderBottomWidth: 1, borderColor: 'transparent', paddingBottom: 5, marginBottom: 25}}>
-          <Ionicons name="ios-finger-print" size={22} color="#444" style={{alignSelf: 'flex-start', paddingTop: 5}}/>
-          <TextInput keyboardType="email-address" autoCorrect={false} autoCapitalize="none" autoCompleteType="off" placeholder="Email Address." placeholderTextColor="#444" style={{paddingVertical: 0, width: '100%', height: 34, fontFamily: 'SourceSansPro-Regular', color: '#444', paddingLeft: 10}}/>
+          <Ionicons name="ios-keypad" size={20} color="#444" style={{alignSelf: 'flex-start', paddingTop: 5}}/>
+          <TextInput autoCorrect={false} autoCapitalize="none" autoCompleteType="off" placeholder="School Private Code." placeholderTextColor="#444" style={{paddingVertical: 0, width: '100%', height: 34, fontFamily: 'SourceSansPro-Regular', color: '#444', paddingLeft: 10}}/>
         </View>
-        <View style={{flexDirection: 'row', borderBottomWidth: 1, borderColor: 'transparent', paddingBottom: 5, marginBottom: 25}}>
-          <Ionicons name="ios-lock" size={24} color="#444" style={{alignSelf: 'flex-start', paddingTop: 5}}/>
-          <TextInput secureTextEntry={true} placeholder="Password." placeholderTextColor="#444" style={{paddingVertical: 0, width: '100%', height: 34, fontFamily: 'SourceSansPro-Regular', color: '#444', paddingLeft: 10}}/>
-        </View>
+        {
+          this.props.accountype === 'student' ?
+          <View style={{flexDirection: 'row', borderBottomWidth: 1, borderColor: 'transparent', paddingBottom: 5, marginBottom: 25}}>
+            <Ionicons name="ios-filing" size={20} color="#444" style={{alignSelf: 'flex-start', paddingTop: 5}}/>
+            <TextInput placeholder="Student ID." placeholderTextColor="#444" style={{paddingVertical: 0, width: '100%', height: 34, fontFamily: 'SourceSansPro-Regular', color: '#444', paddingLeft: 10}}/>
+          </View> : this.props.accountype === 'teacher' ?
+          <View style={{flexDirection: 'row', borderBottomWidth: 1, borderColor: 'transparent', paddingBottom: 5, marginBottom: 25}}>
+            <Ionicons name="ios-filing" size={20} color="#444" style={{alignSelf: 'flex-start', paddingTop: 5}}/>
+            <TextInput placeholder="Teacher ID." placeholderTextColor="#444" style={{paddingVertical: 0, width: '100%', height: 34, fontFamily: 'SourceSansPro-Regular', color: '#444', paddingLeft: 10}}/>
+          </View> : null
+        }
         <View style={{marginTop: 30}}>
-          <TouchableOpacity style={{width: '100%', height: 40, borderRadius: 6, justifyContent: 'center', alignItems: 'center', backgroundColor: '#3951b4'}}>
-            <Text style={{fontFamily: 'SourceSansPro-SemiBold', color: '#ffffff', fontSize: 14}}>SIGN IN</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={{alignItems: 'flex-end', marginTop: 20}}>
-          <TouchableOpacity>
-            <Text style={{fontFamily: 'SourceSansPro-SemiBold', fontSize: 13, color: '#7f8082'}}>Don't have an account?</Text>
+          <TouchableOpacity style={{flexDirection: 'row',width: '100%', height: 40, borderRadius: 6, justifyContent: 'center', alignItems: 'center', backgroundColor: '#3951b4'}}>
+            <Text style={{fontFamily: 'SourceSansPro-SemiBold', color: '#ffffff', fontSize: 14}}>FINISH</Text>
+            <Ionicons name="ios-arrow-round-forward" size={24} color="#ffffff" style={{marginLeft: 10}}/>
           </TouchableOpacity>
         </View>
       </Animated.View>
