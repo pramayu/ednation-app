@@ -20,7 +20,7 @@ var Header = () => {
         </View>
         <View style={{width: '50%', height: '100%', justifyContent: 'center',alignItems: 'flex-end'}}>
           <TouchableOpacity>
-            <Ionicons name="ios-arrow-round-forward" color="#3951b4" size={28}/>
+            
           </TouchableOpacity>
         </View>
       </View>
