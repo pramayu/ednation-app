@@ -11,6 +11,9 @@ import {logo_animated} from '../../utils/animated/animated.splash';
 class SplashScreen extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      redirect: true
+    }
     this.logo_animatedSw = new Animated.Value(0);
     this.capt_animatedSw = new Animated.Value(0);
     this.scap_animatedSw = new Animated.Value(0);
@@ -19,6 +22,7 @@ class SplashScreen extends Component {
 
   componentDidMount = () => {
     logo_animated(this.opacitiAnimated, this.logo_animatedSw, this.capt_animatedSw, this.scap_animatedSw, 2);
+    if (this.state.redirect === true) {this.props.navigation.push('SignUpScreen')}
   };
 
   render () {

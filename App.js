@@ -16,10 +16,11 @@ import {
   StatusBar,
 } from 'react-native';
 
-import Bio from './app/screens/bio/bio';
+// import { MainRoute } from './app/routes/index';
+import AccountScreen from './app/screens/account/account';
 
 const App: () => React$Node = () => {
-  return <Bio />
+  return <AccountScreen />
 };
 
 export default App;
