@@ -18,6 +18,7 @@ import {
 
 // import { MainRoute } from './app/routes/index';
 import AccountScreen from './app/screens/account/account';
+import DiscoverSchool from './app/screens/discoverschool/discoverschool';
 
 const App: () => React$Node = () => {
   return <AccountScreen />
