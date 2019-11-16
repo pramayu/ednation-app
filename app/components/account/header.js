@@ -13,7 +13,6 @@ var Header = (props) => {
     <View style={{width: '100%', height: height / 15, paddingHorizontal: 20}}>
       <View style={{width: '100%', height: '100%', flexDirection: 'row'}}>
         <View style={{width: '50%', height: '100%', justifyContent: 'center'}}>
-
         </View>
         <View style={{width: '50%', height: '100%', justifyContent: 'center',alignItems: 'flex-end'}}>
           <TouchableOpacity>
